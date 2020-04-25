@@ -10,8 +10,8 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
 server.post('/csv', (req, res) => {
-  console.log(req.body);
-  res.status(200).send(req.body);
+  console.log(req.body.text);
+  res.status(200).send(JSON.stringify(req.body.text));
 });
 
 
