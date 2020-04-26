@@ -8,10 +8,11 @@ const server = express();
 server.use(express.static(path.join(__dirname, '/public')));
 
 server.use(bodyParser.urlencoded({ extended: false }));
-server.use(bodyParser.json());
+server.use(bodyParser.text());
 
 server.post('/formData', (req, res) => {
   let form = req.body;
+  console.log(typeof form);
   saveForm.save(form);
   res.status(200).send(req.body);
 })

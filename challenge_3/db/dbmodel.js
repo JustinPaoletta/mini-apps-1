@@ -12,8 +12,8 @@ var userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  address: { line1: String, line2: String, city: String, state: String, zipcode: Number },
-  payment: { ccnum: Number, expiration: Number, cvv: Number, zipcode: Number }
+  // address: { line1: String, line2: String, city: String, state: String, zipcode: Number },
+  // payment: { ccnum: Number, expiration: Number, cvv: Number, zipcode: Number }
 });
 
 var User = mongoose.model('User', userSchema);
@@ -26,8 +26,5 @@ let saveUser = (data) => {
   })
   saveData.save(err => { if (err) return console.log(err) });
 }
-
-
-
 
 module.exports.save = saveUser;
